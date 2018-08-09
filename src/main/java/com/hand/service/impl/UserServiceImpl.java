@@ -17,13 +17,14 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
     @Override
     public int addUser(User user) {
+
         return userMapper.insert(user);
     }
 
     @Override
     public PageInfo<User> findAllUser(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum,pageSize);
-        List<User> users=userMapper.selectUsers();
+        List<User> users=userMapper.selectAll();
         PageInfo result =new PageInfo(users);
         return result;
     }

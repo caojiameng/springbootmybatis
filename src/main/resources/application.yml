@@ -46,4 +46,12 @@ pagehelper:
     supportMethodsArguments: true
     params: count=countSql
     returnPageInfo: check
+# 配置通用mapper插件的内容
+# 第一个是配置通用接口所在的目录
+
+mapper:
+  mappers: com.utils.CommonMapper
+  not-empty: false
+  identity: MYSQL
+
 
