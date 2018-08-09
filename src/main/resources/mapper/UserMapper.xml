@@ -19,10 +19,10 @@
     <!--from t_user-->
     <!--where userid = #{userid,jdbcType=INTEGER}-->
   <!--</select>-->
-  <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >-->
-    <!--delete from t_user-->
-    <!--where userid = #{userid,jdbcType=INTEGER}-->
-  <!--</delete>-->
+  <delete id="deleteById" parameterType="java.lang.Integer" >
+    delete from user
+    where userid = #{userid,jdbcType=INTEGER}
+  </delete>
   <!--<insert id="insert" parameterType="com.hand.model.User" >-->
     <!--insert into t_user (userId, username, password,-->
       <!--phone)-->
@@ -75,13 +75,13 @@
     <!--</set>-->
     <!--where userid = #{userid,jdbcType=INTEGER}-->
   <!--</update>-->
-  <!--<update id="updateByPrimaryKey" parameterType="com.hand.model.User" >-->
-    <!--update t_user-->
-    <!--set username = #{username,jdbcType=VARCHAR},-->
-      <!--password = #{password,jdbcType=VARCHAR},-->
-      <!--phone = #{phone,jdbcType=VARCHAR}-->
-    <!--where userid = #{userid,jdbcType=INTEGER}-->
-  <!--</update>-->
+  <update id="updateById" parameterType="com.hand.model.User" >
+    update user
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR}
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
   <select id="selectUsers" resultType="com.hand.model.User">
     SELECT
     <include refid="Base_Column_List"/>

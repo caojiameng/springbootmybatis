@@ -31,11 +31,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int deleteUser(Integer userid) {
-        return userMapper.deleteByPrimaryKey(userid);
+        return userMapper.deleteById(userid);
     }
 
     @Override
     public int updateById(User user) {
-        return userMapper.updateByPrimaryKey(user);
+        return userMapper.updateById(user);
     }
 }

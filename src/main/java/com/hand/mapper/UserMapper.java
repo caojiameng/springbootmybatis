@@ -10,7 +10,8 @@ import java.util.List;
 public interface UserMapper extends CommonMapper<User> {
     public List<User> selectByDeleteId();
     //随便加的俩函数
-//    int deleteByPrimaryKey(Integer userid);
+     int deleteById(Integer userid);
+     int updateById(User user);
 //
 //    int insert(User record);
 //
